@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book name:</strong>
+  <%= @mybook.book_name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @mybook.author %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @mybook.price %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @mybook.publisher %>
+</p>
+
+<p>
+  <strong>Release:</strong>
+  <%= @mybook.release %>
+</p>
+
+<p>
+  <strong>Image</strong>
+  <%= image_tag("#{@mybook.book_img}") %>
+</p>
+<%= link_to 'Edit', edit_mybook_path(@mybook) %> |
+<%= link_to 'Back', mybooks_path %>

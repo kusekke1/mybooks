@@ -1,0 +1,1710 @@
+
+
+Started GET "/" for ::1 at 2016-02-13 19:34:49 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 26ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMybooks (20160213103541)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "mybooks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_name" varchar, "author" varchar, "price" integer, "publisher" varchar, "release" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160213103541"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-02-13 19:36:45 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 24ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:36:52 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1495ms (Views: 1488.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-13 19:36:53 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-13 19:36:53 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-13 19:36:53 +0900
+
+
+Started GET "/mybooks/new" for ::1 at 2016-02-13 19:36:56 +0900
+Processing by MybooksController#new as HTML
+  Rendered mybooks/_form.html.erb (33.5ms)
+  Rendered mybooks/new.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 85ms (Views: 70.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/mybooks" for ::1 at 2016-02-13 19:38:02 +0900
+Processing by MybooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2yBJOihY0QRuLxnoshhnLmglntfloaWQY3qzhSTXrPAWsIbXtgJn48dyLKqZkmF/pWn59HztJ0WtsRZV2EVg==", "mybook"=>{"book_name"=>"Ruby on Rails 4 アプリケーションプログラミング", "author"=>"山田 祥寛", "price"=>"3780", "publisher"=>"技術評論社技術評論社", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13"}, "commit"=>"Create Mybook"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "mybooks" ("book_name", "author", "price", "publisher", "release", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["book_name", "Ruby on Rails 4 アプリケーションプログラミング"], ["author", "山田 祥寛"], ["price", 3780], ["publisher", "技術評論社技術評論社"], ["release", "2016-02-13"], ["created_at", "2016-02-13 10:38:02.231505"], ["updated_at", "2016-02-13 10:38:02.231505"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/1
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/mybooks/1" for ::1 at 2016-02-13 19:38:02 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered mybooks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:38:04 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.3ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mybooks/new" for ::1 at 2016-02-13 19:38:54 +0900
+Processing by MybooksController#new as HTML
+  Rendered mybooks/_form.html.erb (3.6ms)
+  Rendered mybooks/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mybooks" for ::1 at 2016-02-13 19:39:22 +0900
+Processing by MybooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v79w33yLJfPBRPYO3nMQeprkoD/bw/lAGVVpHDsg1+By46nTglLAWK8+Y92KUaja//h0+an6bYg0CYWmZi8ezA==", "mybook"=>{"book_name"=>"色彩を持たない多崎つくると、彼の巡礼の年 (文春文庫)", "author"=>"村上 春樹", "price"=>"788", "publisher"=>"文藝春秋", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13"}, "commit"=>"Create Mybook"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mybooks" ("book_name", "author", "price", "publisher", "release", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_name", "色彩を持たない多崎つくると、彼の巡礼の年 (文春文庫)"], ["author", "村上 春樹"], ["price", 788], ["publisher", "文藝春秋"], ["release", "2016-02-13"], ["created_at", "2016-02-13 10:39:22.627619"], ["updated_at", "2016-02-13 10:39:22.627619"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/mybooks/2
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/mybooks/2" for ::1 at 2016-02-13 19:39:22 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered mybooks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:39:25 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks/new" for ::1 at 2016-02-13 19:39:26 +0900
+Processing by MybooksController#new as HTML
+  Rendered mybooks/_form.html.erb (3.5ms)
+  Rendered mybooks/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mybooks" for ::1 at 2016-02-13 19:39:59 +0900
+Processing by MybooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JfT1qJulwrlgaUoIGfg/jWijUfyUx3qvaH9XIjmcghvoqCykZXwnEg4T39tN2octDb+FOub+7mdFI7uYZJNLNw==", "mybook"=>{"book_name"=>"進撃の巨人(18)", "author"=>"諫山 創", "price"=>"463", "publisher"=>"講談社", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13"}, "commit"=>"Create Mybook"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "mybooks" ("book_name", "author", "price", "publisher", "release", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["book_name", "進撃の巨人(18)"], ["author", "諫山 創"], ["price", 463], ["publisher", "講談社"], ["release", "2016-02-13"], ["created_at", "2016-02-13 10:39:59.598410"], ["updated_at", "2016-02-13 10:39:59.598410"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/3
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-13 19:39:59 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:40:03 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddBookImages (20160213104256)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "mybooks" ADD "book_img" text[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160213104256"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:49:52 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.7ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 285ms (Views: 270.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mybooks/new" for ::1 at 2016-02-13 19:50:55 +0900
+Processing by MybooksController#new as HTML
+  Rendered mybooks/_form.html.erb (33.7ms)
+  Rendered mybooks/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 73ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:50:58 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks/1/edit" for ::1 at 2016-02-13 19:50:59 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered mybooks/_form.html.erb (7.6ms)
+  Rendered mybooks/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 86ms (Views: 62.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:51:04 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:51:26 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-13 19:51:26 +0900
+
+
+Started GET "/mybooks/3/edit" for ::1 at 2016-02-13 19:51:28 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/_form.html.erb (44.6ms)
+  Rendered mybooks/edit.html.erb within layouts/application (46.7ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `text_filed' for #<ActionView::Helpers::FormBuilder:0x007ff417252980>):
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :book_img %><br>
+    36:     <%= f.text_filed :book_img %>
+    37:   </div>
+    38:   <div class="actions">
+    39:     <%= f.submit %>
+  app/views/mybooks/_form.html.erb:36:in `block in _app_views_mybooks__form_html_erb__3552130843039610001_70343146314260'
+  app/views/mybooks/_form.html.erb:1:in `_app_views_mybooks__form_html_erb__3552130843039610001_70343146314260'
+  app/views/mybooks/edit.html.erb:3:in `_app_views_mybooks_edit_html_erb__2456512917693637671_70343143951220'
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (76.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (166.7ms)
+
+
+Started GET "/mybooks/3/edit" for ::1 at 2016-02-13 19:51:28 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.4ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/_form.html.erb (17.7ms)
+  Rendered mybooks/edit.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `text_filed' for #<ActionView::Helpers::FormBuilder:0x007ff4128d3db8>):
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :book_img %><br>
+    36:     <%= f.text_filed :book_img %>
+    37:   </div>
+    38:   <div class="actions">
+    39:     <%= f.submit %>
+  app/views/mybooks/_form.html.erb:36:in `block in _app_views_mybooks__form_html_erb__3552130843039610001_70343176141420'
+  app/views/mybooks/_form.html.erb:1:in `_app_views_mybooks__form_html_erb__3552130843039610001_70343176141420'
+  app/views/mybooks/edit.html.erb:3:in `_app_views_mybooks_edit_html_erb__2456512917693637671_70343176162400'
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (76.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (166.2ms)
+
+
+Started GET "/mybooks/3/edit" for ::1 at 2016-02-13 19:51:42 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/_form.html.erb (8.3ms)
+  Rendered mybooks/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-13 19:51:42 +0900
+
+
+Started PATCH "/mybooks/3" for ::1 at 2016-02-13 19:52:10 +0900
+Processing by MybooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kcWAa7E0slpe16JfLJZ96wTZlElOzi18EXaVn3ZAeHhcmVlnT+1X8TCtN4x4tMVLYcVAjzz3ubQ8KnklK0+xVA==", "mybook"=>{"book_name"=>"進撃の巨人(18)", "author"=>"諫山 創", "price"=>"463", "publisher"=>"講談社", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13", "book_img"=>"http://ecx.images-amazon.com/images/I/51%2BvqKx4d7L._SX330_BO1,204,203,200_.jpg"}, "commit"=>"Update Mybook", "id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "mybooks" SET "book_img" = ?, "updated_at" = ? WHERE "mybooks"."id" = ?  [["book_img", "http://ecx.images-amazon.com/images/I/51%2BvqKx4d7L._SX330_BO1,204,203,200_.jpg"], ["updated_at", "2016-02-13 10:52:10.500102"], ["id", 3]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/3
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-13 19:52:10 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:52:15 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-13 19:53:28 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:53:31 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-13 19:53:49 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks/3/edit" for ::1 at 2016-02-13 19:54:03 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/_form.html.erb (5.6ms)
+  Rendered mybooks/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/mybooks/3" for ::1 at 2016-02-13 19:54:08 +0900
+Processing by MybooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8T2K/N4k7EfxWVA7V6Rm4xl8rfHka2+iz81qwxmdrdg8YVPwIP0J7J8jxegDht5DfGB5N5ZS+2rikYZ5RJJk9A==", "mybook"=>{"book_name"=>"進撃の巨人(18)", "author"=>"諫山 創", "price"=>"463", "publisher"=>"講談社", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13", "book_img"=>"http://ecx.images-amazon.com/images/I/51%2BvqKx4d7L._SX330_BO1,204,203,200_.jp"}, "commit"=>"Update Mybook", "id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "mybooks" SET "book_img" = ?, "updated_at" = ? WHERE "mybooks"."id" = ?  [["book_img", "http://ecx.images-amazon.com/images/I/51%2BvqKx4d7L._SX330_BO1,204,203,200_.jp"], ["updated_at", "2016-02-13 10:54:08.177556"], ["id", 3]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/3
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-13 19:54:08 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks/3/edit" for ::1 at 2016-02-13 19:54:11 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/_form.html.erb (4.4ms)
+  Rendered mybooks/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/mybooks/3" for ::1 at 2016-02-13 19:54:15 +0900
+Processing by MybooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IlpCN7NwDEJIhRYDST16lMwXgUEaBrlBgAXcR0fY6w7vBps7Tanp6Sb/g9AdH8I0qQtVh2g/LYmtWTD9GtciIg==", "mybook"=>{"book_name"=>"進撃の巨人(18)", "author"=>"諫山 創", "price"=>"463", "publisher"=>"講談社", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13", "book_img"=>"http://ecx.images-amazon.com/images/I/51%2BvqKx4d7L._SX330_BO1,204,203,200_.jpg"}, "commit"=>"Update Mybook", "id"=>"3"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "mybooks" SET "book_img" = ?, "updated_at" = ? WHERE "mybooks"."id" = ?  [["book_img", "http://ecx.images-amazon.com/images/I/51%2BvqKx4d7L._SX330_BO1,204,203,200_.jpg"], ["updated_at", "2016-02-13 10:54:15.049247"], ["id", 3]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/3
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-13 19:54:15 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:54:43 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:55:31 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-13 19:55:31 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:55:53 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-13 19:55:53 +0900
+
+
+Started GET "/mybooks/2/edit" for ::1 at 2016-02-13 19:56:08 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered mybooks/_form.html.erb (3.1ms)
+  Rendered mybooks/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/mybooks/2" for ::1 at 2016-02-13 19:56:11 +0900
+Processing by MybooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cGegEmPMy3ZV9vncmwgK4f+sbirbP5Odxka7q2bwIaq9O3kenRUu3TuMbA/PKrJBmrC67KkGB1XrGlcRO//ohg==", "mybook"=>{"book_name"=>"色彩を持たない多崎つくると、彼の巡礼の年 (文春文庫)", "author"=>"村上 春樹", "price"=>"788", "publisher"=>"文藝春秋", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13", "book_img"=>"http://ecx.images-amazon.com/images/I/51raGEQSo2L._SX344_BO1,204,203,200_.jpg"}, "commit"=>"Update Mybook", "id"=>"2"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "mybooks" SET "book_img" = ?, "updated_at" = ? WHERE "mybooks"."id" = ?[0m  [["book_img", "http://ecx.images-amazon.com/images/I/51raGEQSo2L._SX344_BO1,204,203,200_.jpg"], ["updated_at", "2016-02-13 10:56:11.305885"], ["id", 2]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/mybooks/2
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/mybooks/2" for ::1 at 2016-02-13 19:56:11 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered mybooks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:56:14 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.3ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mybooks/1/edit" for ::1 at 2016-02-13 19:56:17 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered mybooks/_form.html.erb (4.7ms)
+  Rendered mybooks/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/mybooks/1" for ::1 at 2016-02-13 19:56:30 +0900
+Processing by MybooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qlA7LJnPIzTxQ+6ujwR6UoyKqybb9pnfVR9fKQoYqqpnDOIgZxbGn585e33bJsLy6ZZ/4KnPDRd4Q7OTVxdjhg==", "mybook"=>{"book_name"=>"Ruby on Rails 4 アプリケーションプログラミング", "author"=>"山田 祥寛", "price"=>"3780", "publisher"=>"技術評論社技術評論社", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"13", "book_img"=>"http://ecx.images-amazon.com/images/I/51lycs3O%2BrL._SX374_BO1,204,203,200_.jpg"}, "commit"=>"Update Mybook", "id"=>"1"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "mybooks" SET "book_img" = ?, "updated_at" = ? WHERE "mybooks"."id" = ?  [["book_img", "http://ecx.images-amazon.com/images/I/51lycs3O%2BrL._SX374_BO1,204,203,200_.jpg"], ["updated_at", "2016-02-13 10:56:30.982175"], ["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/1
+Completed 302 Found in 12ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/mybooks/1" for ::1 at 2016-02-13 19:56:31 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered mybooks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-13 19:56:34 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:04:30 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.6ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 296ms (Views: 282.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:04:30 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:07:20 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 89ms (Views: 88.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-3c24d36c3b4a57ef721516776a295224cf912e13f449a7b2d9a0d656d41b4fbe.css?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/scaffolds.self-a09697725e0b78f95cab1bbc934fe7b9ddad9763bb3a6df8b911db8ef073f2d6.css?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:07:20 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:13:12 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 74ms (Views: 73.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-f97826dd7f7310c9efc7452ddebde0ea6fcb693b321481d08f134144d13757cc.css?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:13:12 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:14:36 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-817d08b6982dbc0759241699bf19cc664b7dc921a54f117a26d1f0ef057d694f.css?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:14:36 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:15:35 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 66ms (Views: 65.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-6ab53f17ab053446e72d0c8ea1ecfc4a2bceb228534fa00f3c4d1eca81588dfe.css?body=1" for ::1 at 2016-02-14 10:15:35 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:15:35 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:15:36 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:15:36 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:15:36 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:15:36 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:15:36 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:15:36 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:15:47 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/scaffolds.self-cd37941f897ebc7a754cd89437686c6589585bd394a7be2cf0b0dcd29eb8b7f1.css?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:15:47 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:15:54 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.5ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.self-fd03f47de373f4c4fb479d210a0e4dfd1e206402d93837c1da240101eff8a5a6.css?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:15:55 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:16:25 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-719c45018a48581afca762570fa4661eea63b69a5d4fbfe8e4bb21e01ed97504.css?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:16:25 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:17:43 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-719c45018a48581afca762570fa4661eea63b69a5d4fbfe8e4bb21e01ed97504.css?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:17:43 +0900
+
+
+Started GET "/mybooks/1/edit" for ::1 at 2016-02-14 10:19:01 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMybook Load (0.3ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered mybooks/_form.html.erb (43.8ms)
+  Rendered mybooks/edit.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 143ms (Views: 121.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mybooks/1/edit" for ::1 at 2016-02-14 10:19:01 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered mybooks/_form.html.erb (9.1ms)
+  Rendered mybooks/edit.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:19:01 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:19:21 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks/new" for ::1 at 2016-02-14 10:27:38 +0900
+Processing by MybooksController#new as HTML
+  Rendered mybooks/_form.html.erb (4.7ms)
+  Rendered mybooks/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 49ms (Views: 35.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/mybooks" for ::1 at 2016-02-14 10:29:01 +0900
+Processing by MybooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"agNcwiWUx3KSWijII2OGk0sG2GcXl+gTmiFqMGh70ginX4XO200i2fwgvRt3QT4zLhoMoWWufNu3fYaKNXQbJA==", "mybook"=>{"book_name"=>"test", "author"=>"author_test", "price"=>"4000", "publisher"=>"Publisher_test", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"14", "book_img"=>"http://ecx.images-amazon.com/images/I/61cb7KhrKKL.jpg"}, "commit"=>"Create Mybook"}
+Unpermitted parameter: book_img
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "mybooks" ("book_name", "author", "price", "publisher", "release", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_name", "test"], ["author", "author_test"], ["price", 4000], ["publisher", "Publisher_test"], ["release", "2016-02-14"], ["created_at", "2016-02-14 01:29:01.441021"], ["updated_at", "2016-02-14 01:29:01.441021"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/mybooks/4
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/mybooks/4" for ::1 at 2016-02-14 10:29:01 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMybook Load (0.3ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered mybooks/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:29:37 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.5ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mybooks/4/edit" for ::1 at 2016-02-14 10:29:41 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered mybooks/_form.html.erb (3.4ms)
+  Rendered mybooks/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/mybooks/4" for ::1 at 2016-02-14 10:29:45 +0900
+Processing by MybooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tfwmPSjcq5fo0w6izr5BLc8fkc5V044rqHo+QFfqQIB4oP8x1gVOPIapm3GanPmNqgNFCCfqGuOFJtL6CuWJrA==", "mybook"=>{"book_name"=>"test", "author"=>"author_test", "price"=>"4000", "publisher"=>"Publisher_test", "release(1i)"=>"2016", "release(2i)"=>"2", "release(3i)"=>"14", "book_img"=>"http://ecx.images-amazon.com/images/I/61cb7KhrKKL.jpg"}, "commit"=>"Update Mybook", "id"=>"4"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "mybooks" SET "book_img" = ?, "updated_at" = ? WHERE "mybooks"."id" = ?  [["book_img", "http://ecx.images-amazon.com/images/I/61cb7KhrKKL.jpg"], ["updated_at", "2016-02-14 01:29:45.353599"], ["id", 4]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mybooks/4
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/mybooks/4" for ::1 at 2016-02-14 10:29:45 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered mybooks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:29:50 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mybooks/4/edit" for ::1 at 2016-02-14 10:30:38 +0900
+Processing by MybooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered mybooks/_form.html.erb (4.4ms)
+  Rendered mybooks/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:35:30 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/mybook.book_img" for ::1 at 2016-02-14 10:35:30 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/mybook.book_img"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (225.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (86.8ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (178.6ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:36:30 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.3ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:36:30 +0900
+
+
+Started GET "/images/@mybook.book_img" for ::1 at 2016-02-14 10:36:30 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/@mybook.book_img"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (161.8ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.1ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (132.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (270.0ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:36:56 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.3ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:36:56 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:37:31 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:37:31 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:38:07 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `book_img' for nil:NilClass):
+    25:         <td><%= mybook.publisher %></td>
+    26:         <td><%= mybook.release %></td>
+    27:         <td><img src="<%= mybook.book_img %>"></td>
+    28:         <td><%= image_tag("#{@mybook.book_img}") %></td>
+    29:         <td><%= link_to 'Show', mybook %></td>
+    30:         <td><%= link_to 'Edit', edit_mybook_path(mybook) %></td>
+    31:         <td><%= link_to 'Destroy', mybook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/mybooks/index.html.erb:28:in `block in _app_views_mybooks_index_html_erb___3294129224235785312_70166684960280'
+  app/views/mybooks/index.html.erb:20:in `_app_views_mybooks_index_html_erb___3294129224235785312_70166684960280'
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.1ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.9ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (128.1ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:38:11 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:38:12 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:40:03 +0900
+Processing by MybooksController#index as HTML
+  Rendered mybooks/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:28: syntax error, unexpected =>, expecting :: or '[' or '.'
+...g("#{mybook.book_img, :class => "book-image"}") );@output_bu...
+...                               ^):
+  app/views/mybooks/index.html.erb:28: syntax error, unexpected =>, expecting :: or '[' or '.'
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.1ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.9ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.9ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:40:56 +0900
+Processing by MybooksController#index as HTML
+  Rendered mybooks/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting tSTRING_DEND
+...book.book_img", :class => "book-image"}") );@output_buffer.s...
+...                               ^
+/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ok_img", :class => "book-image"}") );@output_buffer.safe_app...
+...                               ^
+/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:28: syntax error, unexpected ')', expecting tSTRING_DEND
+...img", :class => "book-image"}") );@output_buffer.safe_append...
+...                               ^
+/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:33: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+'.freeze;     end 
+                 ^
+/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting tSTRING_DEND
+/Users/komatsutomoki/camp/mybooks/app/views/mybooks/index.html.erb:43: syntax error, unexpected keyword_end, expecting tSTRING_DEND):
+  app/views/mybooks/index.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting tSTRING_DEND
+  app/views/mybooks/index.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/mybooks/index.html.erb:28: syntax error, unexpected ')', expecting tSTRING_DEND
+  app/views/mybooks/index.html.erb:33: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+  app/views/mybooks/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting tSTRING_DEND
+  app/views/mybooks/index.html.erb:43: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.1ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:41:19 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/scaffolds.self-bae990ac8357e881a324395b088c7c1ffbcc7575d962a3686ba4088ff144b588.css?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:41:19 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:41:51 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.3ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 70ms (Views: 68.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-e8dbc321718e01356a6bee992dc8eedb1e30819b9d31cf91c823231920d1e3e9.css?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:41:51 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:42:45 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:42:45 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:43:20 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:43:20 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:43:20 +0900
+
+
+Started GET "/assets/scaffolds.self-8b62c38e8513eda81d941749cfd3348dd2a9793575c9a4c2edc857226f562fc6.css?body=1" for ::1 at 2016-02-14 10:43:20 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:43:21 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:43:21 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:43:21 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:43:21 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:43:21 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:43:35 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/scaffolds.self-e8dbc321718e01356a6bee992dc8eedb1e30819b9d31cf91c823231920d1e3e9.css?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:43:35 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:43:36 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/scaffolds.self-e8dbc321718e01356a6bee992dc8eedb1e30819b9d31cf91c823231920d1e3e9.css?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:43:36 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:43:37 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.6ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/scaffolds.self-e8dbc321718e01356a6bee992dc8eedb1e30819b9d31cf91c823231920d1e3e9.css?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:43:37 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:44:09 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-c48c1fb73f536495b9927a7dc69233367b3404ce21d5c9ed5981830b7e946a27.css?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:44:09 +0900
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 10:48:09 +0900
+Processing by MybooksController#index as HTML
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT "mybooks".* FROM "mybooks"[0m
+  Rendered mybooks/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/scaffolds.self-c48c1fb73f536495b9927a7dc69233367b3404ce21d5c9ed5981830b7e946a27.css?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:48:09 +0900
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-14 10:51:29 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-14 10:52:48 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/scaffolds.self-c48c1fb73f536495b9927a7dc69233367b3404ce21d5c9ed5981830b7e946a27.css?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:52:48 +0900
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-14 10:53:48 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.2ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/komatsutomoki/camp/mybooks/app/views/mybooks/show.html.erb:30: syntax error, unexpected =>
+...("#{@mybook.book_img}", class=>"book-img") );@output_buffer....
+...                               ^
+/Users/komatsutomoki/camp/mybooks/app/views/mybooks/show.html.erb:30: syntax error, unexpected ')', expecting keyword_end
+...ook_img}", class=>"book-img") );@output_buffer.safe_append='
+...                               ^):
+  app/views/mybooks/show.html.erb:30: syntax error, unexpected =>
+  app/views/mybooks/show.html.erb:30: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.7ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (130.6ms)
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-14 10:54:26 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.1ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/scaffolds.self-c48c1fb73f536495b9927a7dc69233367b3404ce21d5c9ed5981830b7e946a27.css?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:54:26 +0900
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-14 10:55:01 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMybook Load (0.1ms)[0m  SELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/scaffolds.self-c48c1fb73f536495b9927a7dc69233367b3404ce21d5c9ed5981830b7e946a27.css?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:55:01 +0900
+
+
+Started GET "/mybooks/3" for ::1 at 2016-02-14 10:55:26 +0900
+Processing by MybooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMybook Load (0.2ms)[0m  [1mSELECT  "mybooks".* FROM "mybooks" WHERE "mybooks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered mybooks/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/mybooks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/scaffolds.self-c48c1fb73f536495b9927a7dc69233367b3404ce21d5c9ed5981830b7e946a27.css?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:55:26 +0900
