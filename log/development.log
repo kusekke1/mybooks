@@ -1708,3 +1708,17 @@ Started GET "/assets/mybooks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-14 10:55:26 +0900
+
+
+Started GET "/" for ::1 at 2016-02-14 11:53:14 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/komatsutomoki/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 26ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mybooks" for ::1 at 2016-02-14 11:53:20 +0900
+Processing by MybooksController#index as HTML
+  [1m[35mMybook Load (0.2ms)[0m  SELECT "mybooks".* FROM "mybooks"
+  Rendered mybooks/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 265ms (Views: 260.5ms | ActiveRecord: 0.6ms)
